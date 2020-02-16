@@ -2,7 +2,11 @@ package com.shopping.cart.controller;
 
 import com.shopping.cart.model.*;
 import com.shopping.cart.model.dto.DeliveryCostDTO;
-import com.shopping.cart.repository.*;
+import com.shopping.cart.model.dto.ShoppingCartDTO;
+import com.shopping.cart.repository.CampaignRepository;
+import com.shopping.cart.repository.CategoryRepository;
+import com.shopping.cart.repository.CouponRepository;
+import com.shopping.cart.repository.ProductRepository;
 import com.shopping.cart.service.ShoppingCartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -33,9 +37,6 @@ public class DataInitController {
 
     @Autowired
     private CouponRepository couponRepository;
-
-    @Autowired
-    private ShoppingCartRepository shoppingCartRepository;
 
     @Autowired
     private ShoppingCartService shoppingCartService;
@@ -165,8 +166,7 @@ public class DataInitController {
 
     @Transactional
     public void addProductsToCart() {
-        ShoppingCart shoppingCart = new ShoppingCart();
-        shoppingCart = shoppingCartRepository.save(shoppingCart);
+        ShoppingCartDTO shoppingCart = shoppingCartService.saveShoppingCart();
         Long id = shoppingCart.getId();
 
         shoppingCartService.addItem(id, 5L);
