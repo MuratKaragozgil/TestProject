@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: shopping-cart-test-project
+  h2:
+    console:
+      path: /h2
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:shoppingCartTest
+    username: test
+    password: test
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create # create | create-drop | validate | update
+
+server:
+  port: 8080
+  servlet:
+    contextPath: /shopping-cart-test-project
