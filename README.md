@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.com/MuratKaragozgil/TestProject.svg?branch=master)](https://travis-ci.com/MuratKaragozgil/TestProject)
+[![codecov](https://codecov.io/gh/MuratKaragozgil/TestProject/branch/master/graph/badge.svg)](https://codecov.io/gh/MuratKaragozgil/TestProject)
+
 ## Running
 To run project:
 ```
