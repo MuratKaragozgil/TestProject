@@ -4,7 +4,7 @@ branches:
     - master
 
 install:
-  - mvn install -DskipTests=true -Dgpg.skip=true -Dmaven.javadoc.skip=true -B -V
+  - ./gradlew clean build
 
 after_success:
   - ./gradlew jacocoTestReport
