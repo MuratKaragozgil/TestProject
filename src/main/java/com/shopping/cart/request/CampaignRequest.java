@@ -1,8 +1,6 @@
 package com.shopping.cart.request;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 /**
  * @author Murat Karagözgil
@@ -10,6 +8,9 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class CampaignRequest {
     private Long campaignId;
     private Long shoppingCartId;

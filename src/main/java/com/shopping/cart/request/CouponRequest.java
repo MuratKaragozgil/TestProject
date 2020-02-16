@@ -11,7 +11,7 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ItemRequest {
-    private Long productId;
+public class CouponRequest {
+    private Long couponId;
     private Long shoppingCartId;
 }

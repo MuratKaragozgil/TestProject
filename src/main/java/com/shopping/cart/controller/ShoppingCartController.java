@@ -2,6 +2,7 @@ package com.shopping.cart.controller;
 
 import com.shopping.cart.model.dto.ShoppingCartDTO;
 import com.shopping.cart.request.CampaignRequest;
+import com.shopping.cart.request.CouponRequest;
 import com.shopping.cart.request.ItemRequest;
 import com.shopping.cart.service.ShoppingCartService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,6 +63,15 @@ public class ShoppingCartController extends BaseController {
         logUserAction(request, "ApplyCampaign::{}", campaignRequest);
 
         ShoppingCartDTO shoppingCartDTO = shoppingCartService.applyCampaign(campaignRequest.getShoppingCartId(), campaignRequest.getCampaignId());
+
+        return ResponseEntity.ok(shoppingCartDTO);
+    }
+
+    @PostMapping("apply-coupon")
+    public ResponseEntity<ShoppingCartDTO> applyCoupon(HttpServletRequest request, @RequestBody CouponRequest couponRequest) {
+        logUserAction(request, "ApplyCoupon::{}", couponRequest);
+
+        ShoppingCartDTO shoppingCartDTO = shoppingCartService.applyCoupon(couponRequest.getShoppingCartId(), couponRequest.getCouponId());
 
         return ResponseEntity.ok(shoppingCartDTO);
     }
