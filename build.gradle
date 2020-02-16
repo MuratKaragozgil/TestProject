@@ -2,8 +2,8 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'jacoco'
 
-group 'org.example'
-version '1.0-SNAPSHOT'
+group 'org.shopping.cart'
+version '1.0'
 
 sourceCompatibility = 1.8
 
