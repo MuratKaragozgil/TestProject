@@ -1,11 +1,11 @@
 language: java
-install: true
+branches:
+  only:
+    - master
 
-os: linux
-dist: trusty
-jdk: oraclejdk8
+install:
+  - mvn install -DskipTests=true -Dgpg.skip=true -Dmaven.javadoc.skip=true -B -V
 
 after_success:
   - ./gradlew jacocoTestReport
   - 'bash <(curl -s https://codecov.io/bash)'
-  - 'bash <(curl -s https://copilot.blackducksoftware.com/ci/travis/scripts/upload)'
