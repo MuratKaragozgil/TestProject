@@ -1,7 +1,13 @@
 language: java
+os: linux
+
 branches:
   only:
     - master
+
+cache:
+  directories:
+    - $HOME/.gradle
 
 install:
   - ./gradlew clean build
