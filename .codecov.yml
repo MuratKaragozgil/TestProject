@@ -11,3 +11,6 @@ coverage:
 comment:
   layout: "header, diff, changes, tree"
   behavior: default
+ignore:
+  - "src/main/java/com/shopping/cart/request/*"
+  - "src/main/java/com/shopping/cart/model/*"
